@@ -53,6 +53,7 @@
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-9 bg-white border text-center"> <!--7-->
+            <div class="costume-class-wrapper">
             <p>You can use any of the contextual classes to only add a color to the table header:</p>
             <div class="table-responsive">
                 <table class="table table-hover table-bordered">
@@ -133,6 +134,7 @@
                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                 </li>
                 </ul>
+            </div>
             </div>
 
             </div>
