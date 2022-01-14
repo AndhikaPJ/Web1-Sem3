@@ -4,20 +4,25 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Biodata Ku</title>
+    <title>TUGAS WEB 1</title>
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="css/sweetalert2.css" rel="stylesheet">
+    <link href="css/select2.css" rel="stylesheet" />
+    <link href="css/select2-bootstrap4.min.css" rel="stylesheet" />
+    
+    
   </head>
 
   <body class="bg-dark" id="home">
-      <div class="container-fluid">
+      <div class="container">
             <!--Header With Jumbotron-->
             <div class="row bg-light text-white mt-3 border">
                 <nav class="navbar navbar-expand-sm navbar-light bg-info">
                     <div class="container">
-                        <a class="navbar-brand" href="index.php">Biodata</a>
+                        <a class="navbar-brand" href="index.php">Website Ku</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                         <span class="navbar-toggler-icon"></span>
                         </button>
@@ -55,9 +60,9 @@
                                     Notifikasi <span class="badge bg-danger">3</span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item badge bg-danger" href="#">Ema Logout</a></li>
-                                    <li><a class="dropdown-item badge bg-success" href="#">Apriliani Login</a></li>
-                                    <li><a class="dropdown-item badge bg-success" href="#">Prima Login</a></li>
+                                    <li><a class="dropdown-item badge bg-danger" href="#">Hasan Logout</a></li>
+                                    <li><a class="dropdown-item badge bg-success" href="#">Nidaul Login</a></li>
+                                    <li><a class="dropdown-item badge bg-success" href="#">Riyadi Login</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -86,15 +91,15 @@
                     <div class="carousel-item">
                         <img src="image/2.jpg" alt="Pemandangan 1" class="d-block w-100">
                         <div class="carousel-caption shadow">
-                            <h3>Lukisan 1</h3>
-                            <p>Lukisan indah dari ananda XY dan berhasil mendapatkan Juara 1.</p>
+                            <h3>Lukisan 2</h3>
+                            <p>Lukisan indah dari ananda XY dan berhasil mendapatkan Juara 2.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="image/3.jpg" alt="Pemandangan 1" class="d-block w-100">
                         <div class="carousel-caption shadow">
-                            <h3>Lukisan 1</h3>
-                            <p>Lukisan indah dari ananda XY dan berhasil mendapatkan Juara 1.</p>
+                            <h3>Lukisan 3</h3>
+                            <p>Lukisan indah dari ananda XY dan berhasil mendapatkan Juara 3.</p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +115,7 @@
         </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row mb-3">
                 <!--Pembagi 3 4 & 5-->
                 <div class="col-sm-12 col-md-12 col-lg-8 themed-grid-col">
@@ -203,13 +208,15 @@
                                             <a href="#" class="btn btn-primary">See Profile</a>
                                         </div>
                                 </div>
+
+                                <button type="button" class="btn btn-info swa2-gambar mt-3 mb-3">Tampilkan Gambar SweetAlert2</button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 bg-light border themed-grid-col">
+                        <div class="col-sm-12 col-md-12 col-lg-12 bg-light border themed-grid-col" id="form">
                             <!--Form-->
-                            <h3>Tambah Data Mahasiswa</h3>
+                            <h3 class="text-center"> Form Tambah Data Mahasiswa</h3><br>
                             <p>Silahkan menambahkan data pada form dibawah ini...!</p>
                             <form action="" method="$_POST" class="was-validated">
                                 <div class="form-floating mb-3 mt-3">
@@ -241,7 +248,7 @@
 
                                 <div class="form-floating">
                                     <select class="form-select" id="kabkota" name="kabkota" required>
-                                        <option value="">-- Kabupaten/Kota --</option>
+                                        <option value="" selected hidden>-- Kabupaten/Kota --</option>
                                         <option value="Banjarmasin">Banjarmasin</option>
                                         <option value="Banjarbaru">Banjarbaru</option>
                                         <option value="Banjar">Banjar</option>
@@ -250,7 +257,25 @@
                                     <div class="valid-feedback">Data Oke.</div>
                                     <div class="invalid-feedback">Kabupaten/Kota wajib diisi...!</div>
                                 </div>
-
+                                
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Multi Select Box</label>
+                                        <select id="kota2" name="kota2[]" class="form-control" multiple="multiple">
+                                            <option value=""></option>
+                                            <option value="Jakarta">Jakarta</option>
+                                            <option value="Bogor">Bogor</option>
+                                            <option value="Depok">Depok</option>
+                                            <option value="Tangerang">Tangerang</option>
+                                            <option value="Bekasi">Bekasi</option>
+                                            <option value="Bandung">Bandung</option>
+                                            <option value="Semarang">Semarang</option>
+                                            <option value="Yogyakarta">Yogyakarta</option>
+                                            <option value="Surabaya">Surabaya</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="mb-3 mt-3">
                                     Hobi:
                                     <div class="form-check">
@@ -266,10 +291,15 @@
                                 </div>
 
                                 <div class="mb-3 mt-3">
-                                    
+                                    <label for="formFile" class="form-label">Masukkan File Upload</label>
+                                    <input class="form-control" type="file" id="formFile" required>
+                                    <div class="valid-feedback">Format File diterima.</div>
+                                    <div class="invalid-feedback">File wajib diisi...!</div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary" name="tambah">Simpan</button>
+                                <button type="submit" class="btn btn-success" name="tambah">Simpan</button>
+                                <button type="reset" class="btn btn-danger bersihkan">Bersihkan</button>
+                                
                             </form>
                             <hr>
                         </div>
@@ -278,7 +308,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 bg-light border themed-grid-col" id="table">
                             <!--Mencoba Datatables-->
-                            <h3>Data Keluarga</h3>
+                            <h3 class="text-center">Tabel Data Keluarga</h3>
                             
                             <!--Modal-->
                             <!-- Button to Open the Modal Tambah Data-->
@@ -328,11 +358,11 @@
                                             </div>
 
                                             <div class="form-floating">
-                                                <select class="form-select" id="kabkota" name="kabkota" required>
+                                                <select class="form-select" id="kabkota" name="kabkota"  required>
                                                     <option value="">-- Kabupaten/Kota --</option>
-                                                    <option value="Banjarmasin">Banjarmasin</option>
-                                                    <option value="Banjarbaru">Banjarbaru</option>
-                                                    <option value="Banjar">Banjar</option>
+                                                    <option value="BJM">Banjarmasin</option>
+                                                    <option value="BJB">Banjarbaru</option>
+                                                    <option value="BANJAR">Banjar</option>
                                                 </select>
                                                 <label for="kabkota">Kabupaten/Kota:</label>
                                                 <div class="valid-feedback">Data Oke.</div>
@@ -361,6 +391,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Simpan</button>
+                                        
                                     </div>
 
                                     </div>
@@ -391,7 +422,7 @@
                                             <td class="text-center">
                                                 <a href="#table" type="button" class="btn-sm btn-success" data-bs-toggle="tooltip" data-bs-placement="right" title="Edit Data Mahassiwa!">Edit</a> | 
                                                 <a href="#table" type="button" class="btn-sm btn-danger" data-bs-toggle="tooltip" data-bs-placement="right" title="Hapus Data Mahassiwa!">Hapus</a>
-                                            <td>Ema Apriliani</td>
+                                            <td>Nidaul Hasanah</td>
                                             <td>Perempuan</td>
                                             <td>Garden Mawar City</td>
                                             <td>Banjarmasin</td>
@@ -543,11 +574,14 @@
                             </div>
                         </div>
 
+                        <!--SweetAlert Button-->
+
+
                 </div>
 
                 <!--08 Footer-->
                 <div class="col py-2 bg-primary text-center text-white" id="footer">
-                    <p>Copyright &copy; <small><mark>Andhika</mark> 2022</small></p>
+                    <p>Copyright &copy; <small><mark>Akhmad Riyadi</mark> 2022</small></p>
                 </div>
             </div>
         </div>
@@ -577,6 +611,8 @@
             }
         </script>
 
+        <script src="js/sweetalert2.all.min.js"></script>
+        <script src="js/select2.js"></script>
         <script src="js/jquery-3.5.1.js"></script>
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.buttons.min.js"></script>
@@ -586,6 +622,54 @@
         <script src="js/buttons.html5.min.js"></script>
         <script src="js/buttons.print.min.js"></script>
         <script src="js/chart.min.js"></script>
+        
+        
+        <!--Aelect2-->
+        <script>
+            $(document).ready(function () {
+
+                var kabkota = (
+                "Banjarmasin","Banjarbaru","Banjar"
+                );
+
+                $("#kota").select2({
+                    data: 'kabkota',
+                    theme: 'bootstrap4',
+                    placeholder: "Please Select"
+                });
+            });
+        </script>
+
+        <!--SweetAlert2 Success-->
+        <script type='text/javascript'>
+	      document.querySelector(".bersihkan").addEventListener("click", function() {
+            Swal.fire({
+                
+                icon: 'success',
+                title: 'Data berhasil direset!',
+                showConfirmButton: false,
+                timer: 1000
+            });
+            });
+
+            document.querySelector(".swa2-gambar").addEventListener("click", function() {
+            Swal.fire({
+                title: "Profile Picture",
+                text: "Apakah Kamu Mengenal Saya?",
+                imageUrl: "image/profil.jpg",
+                imageWidth: 550,
+                imageHeight: 300,
+                imageAlt: "Ini Saya",
+                showCancelButton: true,
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                confirmButtonColor: "#00ff55",
+                cancelButtonColor: "#999999",
+                reverseButtons: true,
+            });
+            });
+	    </script>
+
         <!--Data Tables Sort Data-->
         <script>
             $(document).ready(function() {
