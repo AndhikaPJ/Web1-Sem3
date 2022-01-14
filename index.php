@@ -10,8 +10,7 @@
     <link href="css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="css/sweetalert2.css" rel="stylesheet">
-    <link href="css/select2.css" rel="stylesheet" />
-    <link href="css/select2-bootstrap4.min.css" rel="stylesheet" />
+    <link href="css/select2.min.css" rel="stylesheet" />
     
     
   </head>
@@ -257,23 +256,18 @@
                                     <div class="valid-feedback">Data Oke.</div>
                                     <div class="invalid-feedback">Kabupaten/Kota wajib diisi...!</div>
                                 </div>
-                                
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Multi Select Box</label>
-                                        <select id="kota2" name="kota2[]" class="form-control" multiple="multiple">
-                                            <option value=""></option>
-                                            <option value="Jakarta">Jakarta</option>
-                                            <option value="Bogor">Bogor</option>
-                                            <option value="Depok">Depok</option>
-                                            <option value="Tangerang">Tangerang</option>
-                                            <option value="Bekasi">Bekasi</option>
-                                            <option value="Bandung">Bandung</option>
-                                            <option value="Semarang">Semarang</option>
-                                            <option value="Yogyakarta">Yogyakarta</option>
-                                            <option value="Surabaya">Surabaya</option>
-                                        </select>
-                                    </div>
+
+                                <div class="form-floating mb-3 mt-3">
+                                    <p for="mk">Mata Kuliah:</p>
+                                        <p>
+                                            <!--Plugin Select2-->
+                                            <select class="kota-select2" name="mk[]" multiple="multiple" style="width: 100%">
+                                                <option value="" selected hidden>-- Pilih Mata Kuliah --</option>
+                                                <option value="AL">Pemrograman Web</option>
+                                                <option value="WY">Pemrograman Java</option>
+                                                <option value="WY">Pemrograman Android</option>
+                                            </select>
+                                        </p>
                                 </div>
                                 
                                 <div class="mb-3 mt-3">
@@ -367,6 +361,19 @@
                                                 <label for="kabkota">Kabupaten/Kota:</label>
                                                 <div class="valid-feedback">Data Oke.</div>
                                                 <div class="invalid-feedback">Kabupaten/Kota wajib diisi...!</div>
+                                            </div>
+
+                                            <div class="form-floating mb-3 mt-3">
+                                                <p for="mk">Mata Kuliah:</p>
+                                                    <p>
+                                                        <!--Plugin Select2-->
+                                                        <select class="kota-select2-line" name="mk[]" style="width: 100%">
+                                                            <option value="" selected hidden>-- Pilih Mata Kuliah --</option>
+                                                            <option value="AL">Pemrograman Web</option>
+                                                            <option value="WY">Pemrograman Java</option>
+                                                            <option value="WY">Pemrograman Android</option>
+                                                        </select>
+                                                    </p>
                                             </div>
 
                                             <div class="mb-3 mt-3">
@@ -610,10 +617,10 @@
             toastList.forEach(toast => toast.show())
             }
         </script>
-
-        <script src="js/sweetalert2.all.min.js"></script>
-        <script src="js/select2.js"></script>
+        
         <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/sweetalert2.all.min.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.buttons.min.js"></script>
         <script src="js/jszip.min.js"></script>
@@ -624,19 +631,16 @@
         <script src="js/chart.min.js"></script>
         
         
-        <!--Aelect2-->
+        <!--Select2-->
         <script>
-            $(document).ready(function () {
+            // In your Javascript (external .js resource or <script> tag)
+            $(document).ready(function() {
+                $('.kota-select2').select2();
+                width: 'resolve'
+            });
 
-                var kabkota = (
-                "Banjarmasin","Banjarbaru","Banjar"
-                );
-
-                $("#kota").select2({
-                    data: 'kabkota',
-                    theme: 'bootstrap4',
-                    placeholder: "Please Select"
-                });
+            $(document).ready(function() {
+                $('.kota-select2-line').select2();
             });
         </script>
 
